@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ian's Unblocker</title>
+  <link rel="icon" href="https://em-content.zobj.net/source/apple/391/desktop-computer_1f5a5-fe0f.png">
+  <style>
+    :root {
+      --bg-color: #0e0e0e;
+      --text-color: #ffffff;
+      --accent: #00ffc3;
+    }
+
+    body.light {
+      --bg-color: #f5f5f5;
+      --text-color: #111;
+      --accent: #007bff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      position: relative;
+      font-size: 2.4rem;
+      font-weight: 700;
+    }
+
+    .mode-toggle {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: var(--accent);
+      color: #111;
+      border: none;
+      border-radius: 8px;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+      margin-bottom: 3rem;
+      width: 100%;
+      text-align: center;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+      color: var(--accent);
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .tools {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+      align-items: center;
+    }
+
+    .tool-btn {
+      background: var(--accent);
+      color: #111;
+      text-decoration: none;
+      padding: 0.8rem 1.6rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      transition: transform 0.2s ease, background 0.3s;
+      width: 250px;
+      text-align: center;
+    }
+
+    .tool-btn:hover {
+      transform: scale(1.05);
+      background: #00c2a1;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .socials a {
+      font-size: 1.5rem;
+      color: var(--accent);
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+
+    .socials a:hover {
+      transform: scale(1.15);
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 0.6rem 1rem;
+      background: var(--accent);
+      color: #111;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+
+    #backToTop.show {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    @media (max-width: 600px) {
+      .tool-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Ian’s Unblocker
+    <button class="mode-toggle" id="modeToggle">🌙</button>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>Welcome!</h2>
+      <p>Hey! I’m Ian, a 13-year-old coder who loves building cool tools, websites, mods, and learning new things every day. This site is home to some of my best projects.</p>
+    </section>
+
+    <section class="section">
+      <h2>My Tools & Projects</h2>
+      <p>These tools are designed to help with access, management, or just experimenting for fun. Feel free to explore each one — they’re all built by me!</p>
+      <div class="tools">
+        <a href="wifi/index.html" class="tool-btn">WiFi Unblock</a>
+        <a href="hanger/index.html" class="tool-btn">Extension Hanger</a>
+        <a href="printer/index.html" class="tool-btn">Extension Printer</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>About Me</h2>
+      <p>I started coding because I was curious about how things worked on the internet. Now I’m building full websites, AI projects, mods for games, and more. I’m always learning and pushing myself to improve, and I hope to inspire others too!</p>
+    </section>
+
+    <section class="section">
+      <h2>Connect With Me</h2>
+      <p>You can find me on some of these platforms where I post, stream, or share progress!</p>
+      <div class="socials">
+        <a href="https://twitch.tv/" target="_blank" title="Twitch">🎮</a>
+        <a href="https://tiktok.com/" target="_blank" title="TikTok">🎵</a>
+        <a href="https://instagram.com/" target="_blank" title="Instagram">📸</a>
+      </div>
+    </section>
+  </main>
+
+  <button id="backToTop">↑ Top</button>
+
+  <footer>
+    &copy; 2025 Ian’s Unblocker — Built from scratch by a 13-year-old coder 🚀
+  </footer>
+
+  <script>
+    // Dark/Light mode
+    (function () {
+      const body = document.body;
+      const toggle = document.getElementById('modeToggle');
+      let mode = localStorage.getItem('mode') || 'dark';
+
+      const applyMode = () => {
+        if (mode === 'light') {
+          body.classList.add('light');
+          toggle.textContent = '🌙';
+        } else {
+          body.classList.remove('light');
+          toggle.textContent = '🌞';
+        }
+      };
+
+      applyMode();
+
+      toggle.addEventListener('click', () => {
+        mode = mode === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('mode', mode);
+        applyMode();
+      });
+    })();
+
+    // Fade-in animation on scroll
+    const sections = document.querySelectorAll('.section');
+    function revealOnScroll() {
+      const trigger = window.innerHeight * 0.9;
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < trigger) sec.classList.add('visible');
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
+    // Back to top
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
